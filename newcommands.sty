@@ -1,0 +1,147 @@
+\fancypagestyle{plain}{
+% alles Loeschen
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[R]{\rightmark}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt} % Keine Kopfzeilenlinie
+\setlength{\headheight}{15pt}
+}
+\setcounter{secnumdepth}{-1} \setcounter{tocdepth}{1} 
+
+% ---------- Benutzerdfinierte Befehle/ Umgebungen
+
+\definecolor{shadecolor}{gray}{0.95}
+
+\newcommand{\hinweis}[1]{
+\begin{shaded}
+\textbf{Hinweis} #1
+\end{shaded}
+}
+
+\newenvironment{smallenum}{\begin{small}\begin{enumerate}\itemsep0pt}{\end{enumerate}\end{small}}
+\newenvironment{smallitem}{\begin{small}\begin{itemize}\itemsep0pt}{\end{itemize}\end{small}}
+
+\newcommand{\notizen}{
+\\
+\textit{Platz für Notizen:}\\[0.4cm]
+\begin{Form}
+\TextField[bordercolor={1 0 0},name=line,width=0.5\textwidth,multiline=true,height=5em]{ }\smallskip%
+\end{Form}%
+}
+
+\newcommand{\meinung}[1]{
+\begin{Form}
+\begin{tabular}{llll}
+Meinung: & & LPT: & \\
+    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1Meinung]{}{\phantom{.}=dafur} & Dafür & 
+    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1LPT]{}{\phantom{.}=angen} & Angenommen \\\\
+    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1Meinung]{}{\phantom{.}=dagegen} & Dagegen &
+    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1LPT]{}{\phantom{.}=abgel} & Abgelehnt\\\\
+    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1Meinung]{}{\phantom{.}=ent} & Enthaltung &
+    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1LPT]{}{\phantom{.}=zuruck} & Zurückgezogen\\
+    \end{tabular}
+    \TextField[color={0 0 0},bordercolor={1 0 0},name=#1note,width=0.375\textwidth,multiline=true,height=5em]{Notizen:}
+\end{Form}
+}
+
+\newcommand{\antragsblock}[1]{
+	\chapter{#1}\label{#1}
+}
+
+% ---------- Befehl für die Tagesordnung, listet die Anträge mit Nummer und Namen auf und referenziert zur Seite des Antrages
+\newcommand{\topantrag}[2]{
+	\item{#1 - #2, S. \pageref{#1}}
+}
+
+% ---------- Marker für Konkurrenzanträge, referenziert zum anderen Antrag
+\newcommand{\konkurrenz}[1]{
+\hinweis{Dies ist ein Konkurrenzantrag zu Antrag \texttt{#1} auf Seite\,\pageref{#1}}
+}
+
+% ---------- Sonstiger Antrag Header
+
+\newcommand{\sonstigerantrag}[4]{
+\section[
+% Antragsnummer
+#1: 
+% Antragstitel
+#2]{
+% Antragsnummer
+#1: 
+% Antragstitel
+#2} % Antragslink im Wiki
+\label{#1}
+\begin{table}[!ht]
+\begin{tabularx}{\textwidth}{ l X }
+  \textbf{
+Sonstiger Antrag Nr.} & #1 \\
+  \textbf{
+  % Beantragt von
+Antragssteller} & #4 \\
+  \textbf{
+  % Wikiurl
+Wiki} & \url{#3} \\
+\end{tabularx}
+\end{table}
+\meinung{#1}
+}
+
+% ---------- Änderungsantrag Header
+
+\newcommand{\anderungsantrag}[5]{
+\section[
+% Antragsnummer
+#1: 
+% Antragstitel
+#2]{
+% Antragsnummer
+#1: 
+% Antragstitel
+#2} % Antragslink im Wiki
+\label{#1}
+\begin{table}[!ht]
+\begin{tabularx}{\textwidth}{ l X }
+  \textbf{
+Änderungsantrag Nr.} & #1 \\
+  \textbf{
+  % Beantragt von
+Antragssteller} & #4 \\
+  \textbf{
+  % Betrifft
+Betrifft} & #5 \\
+  \textbf{
+  % Wikiurl
+Wiki} & \url{#3} \\
+\end{tabularx}
+\end{table}
+\meinung{#1}
+}
+
+% ---------- Positionspapier Antrag Header
+
+\newcommand{\positionspapier}[4]{
+\section[
+% Antragsnummer
+#1: 
+% Antragstitel
+#2]{
+% Antragsnummer
+#1: 
+% Antragstitel
+#2} % Antragslink im Wiki
+\label{#1}
+\begin{table}[!ht]
+\begin{tabularx}{\textwidth}{ l X }
+  \textbf{
+Positionspapier Antrag Nr.} & #1 \\
+  \textbf{
+  % Beantragt von
+Antragssteller} & #4 \\
+  \textbf{
+  % Wikiurl
+Wiki} & \url{#3} \\
+\end{tabularx}
+\end{table}
+\meinung{#1}
+}

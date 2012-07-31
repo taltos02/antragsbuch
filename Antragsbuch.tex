@@ -1,0 +1,238 @@
+\documentclass[12pt,a4paper,oneside]{scrbook}
+\usepackage[ngermanb]{babel}
+\usepackage{amsmath}
+\usepackage[mathletters]{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\usepackage{eurosym}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm, includefoot, includehead]{geometry}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{lmodern}
+ \usepackage{framed}
+  \usepackage{color}
+\usepackage[
+	pdftex,
+	bookmarksopen=true,
+	bookmarksnumbered=true,
+	colorlinks,
+	linkcolor=black,
+	citecolor=black,
+	urlcolor=black
+]{hyperref}
+\usepackage{lastpage}
+
+% ---------- Daten des Landesparteitages
+
+\newcommand{\lpt}{
+	Landesparteitag Bayern 2012.2
+}
+
+\newcommand{\datum}{
+	15./16. September 2012
+}
+
+% ---------- Angaben zum Ort
+\newcommand{\halle}{
+	Stadthalle Maxhütte-Haidhof
+}
+
+\newcommand{\strasse}{
+	Regensburger Straße 75
+}
+
+\newcommand{\plz}{
+	93142
+}
+
+\newcommand{\ort}{
+	Maxhütte Haidhof (Oberpfalz)
+}
+
+\usepackage{newcommands}
+
+\hypersetup{pdfauthor = {Landesverband Bayern, Piratenpartei Deutschland}, pdftitle = {Antragsbuch zum \lpt}} 
+
+\begin{document}
+
+% ---------- Titelseite
+
+\pagestyle{empty}
+\hypertarget{Titelseite}{} % Marke für hyperref pdfbookmark
+\pdfbookmark[1]{Titelseite}{Titelseite}
+\begin{titlepage}
+\begin{Large}
+\textsc{
+Piratenpartei Deutschland Landesverband Bayern
+}
+\end{Large}
+\vspace*{4cm}
+\begin{center}
+\begin{Huge}
+\textbf{
+Antragsbuch
+}
+\end{Huge}
+\\[.5cm]
+\begin{huge}
+\textbf{
+\lpt
+}
+\end{huge}
+\\[1cm]
+\includegraphics{media/PIRATENsignet.png}
+\\[1cm]
+\begin{Large}
+\textbf{\datum}
+\end{Large}
+\\[1cm]
+\halle \\
+\strasse \\
+\plz \ort
+\end{center}
+\end{titlepage}
+\clearpage
+
+% ---------- Dedication
+
+
+\pdfbookmark[1]{Inhaltsverzeichnis}{toc}
+\tableofcontents
+\newpage
+\pagestyle{plain}
+
+% ---------- Formales
+
+\chapter{Hinweise und Formalien}
+\input{src/formalien/info-akkreditierung}
+\input{src/formalien/hinweisego}
+\input{src/formalien/anfahrt}
+
+% ---------- Tagesordnung und Vorläufige Antragsblöcke
+
+\include{src/tagesordnung}
+
+% ---------- Anträge
+
+\clearpage
+
+\antragsblock{Wahlvorbereitung}
+
+\include{src/wahlvorbereitung/x01}
+\include{src/wahlvorbereitung/x02}
+\include{src/wahlvorbereitung/x03}
+
+\chapter{Strukturanträge}\label{Strukturantraege} % Umlaute im label Befehl gehen nicht!
+
+\include{src/strukturantraege/s01}
+\include{src/strukturantraege/s02}
+\include{src/strukturantraege/s03}
+\include{src/strukturantraege/x04}
+\include{src/strukturantraege/x05}
+\include{src/strukturantraege/x06}
+
+
+\positionspapier
+% Antragsnummer
+{P54}
+% Antragstitel
+{Doppik vs. Kameralistik A}
+% Wikiurl zum Antrag
+{http://wiki.piratenpartei.de/BY:Landesparteitag 2012.1/Antragsfabrik/Doppik+Kameralistik-A}
+% Antragssteller
+{Simon90L}
+% Antragstext
+\subsection{Antrag}
+Der Landeshaushalt wird maßgeblich durch das
+verwendete Rechnungswesen bestimmt. Bayern verwendet noch die Kameralistik
+(Kameralbuchwesen), während einige Kommunen, Bundesländer und der Großteil der EU bereits
+die Doppik (doppelten Buchführung) eingeführt haben. Die Kameralistik bietet keinen Überblick
+über den Ressourcenverbrauch, eine Kosten- Leistungsrechnung kann nicht durchgängig
+implementiert werden. Es erscheint zweifelhaft, dass in Zeiten knapper Kassen das bisherige
+Rechnungswesen den neuen Anforderungen gewachsen ist. Darüber hinaus ist es wenig sinnvoll,
+wenn Land und Kommunen in unterschiedlichen Systemen wirtschaften. Wir befürworten daher
+eine Reformierung des Rechnungswesens mit der Zielrichtung, den Wechsel von der Kameralistik
+zur Doppik in ganz Bayern umzusetzen.
+\subsection{Begründung}
+\url{http://www.fw-bayern.de/uploads/media/doppik-kameralistik.pdf}
+
+\anderungsantrag
+% Antragsnummer
+{S05}
+% Antragstitel
+{Einführung von Mitgliederentscheid}
+% Wikiurl zum Antrag
+{http://wiki.piratenpartei.de/BY:Landesparteitag 2012.1/Antragsfabrik/Mitgliederentscheid}
+% Antragssteller
+{Rainer Wutta}
+% Betrifft
+{Satzung des Landesverbands Bayern / Abschnitt A§14}
+% Antragstext
+\subsection{Neuer §: Abschnitt A§ 14Mitgliederentscheid}
+\begin{enumerate}
+	\item Wenn 5 \% der stimmberechtigten Mitglieder zu einem Thema einen Mitgliederentscheid wünschen, wird dieser Entscheid vom jeweiligen Vorstand (Landes-, Bezirks-, Kreis- und Ortsvorstand) innerhalb von 4 Wochen initiiert, durchgeführt und die Ergebnisse veröffentlicht.
+	\item Die Durchführung muß geheim per Urnenwahl und per Briefwahl erfolgen.
+	\item Das Quorum von 5\% der stimmberechtigten Mitglieder bezieht sich auf die jeweilige Region in der der Mitgliederentscheid durchgeführt wird und für die dieser Entscheid bindend istd.h. Land, Bezirk, Kreis und Gemeinde.
+	\item Stimmt die einfache Mehrheit der sich beteiligenden stimmberechtigten Mitglieder des Gebietes
+für dieses Thema, so ist es auf der jeweiligen EbeneLand, Bezirk, Kreis und Gemeinde -
+angenommen und bindend. Für Satzungsänderungen müssen mehr als 50 \% der stimmberechtigten
+Mitglieder des Gebietes für das Thema stimmen.
+\end{enumerate}
+\subsection{Begründung}
+Der Mitgliederentscheid innerhalb der Partei entspricht dem Volksentscheid, den wir Piraten z.B. beim bedingungslosen
+Grundeinkommen fordern. Er ist eine Ergänzung zu Parteitagen d.h. die Willensbildung der Mitglieder kann auch zwischen
+Parteitagen stattfinden. Dies ist gelebte innerparteiliche Basisdemokratie als Vorbild für ganz Deutschland.
+
+\sonstigerantrag
+% Antragsnummer
+{X04}
+% Antragstitel
+{Erstellung des Wahlprogramms}
+% Wikiurl zum Antrag
+{http://wiki.piratenpartei.de/BY:Landesparteitag 2012.1/Antragsfabrik/Wahlprogramm}
+ % Antragssteller
+{CEdge}
+\konkurrenz{P54}
+% Antragstext
+\subsection{Antrag}
+Der Landesparteitag möge folgendes beschließen:\\
+Zur Entwicklung des Wahlprogramms können für den Landesparteitag Positionspapiere und
+Programmanträge für das Wahlprogramm eingereicht werden.\par
+Der Landesvorstand wird beauftragt, dafür zu sorgen, dass die Inhalte und Forderungen der
+Positionspapiere in das Landeswahlprogramm einfließen. Die Texte der Wahlprogrammanträge
+werden direkt in das Landeswahlprogramm übernommen.\par
+Weiterhin wird der Landesvorstand beauftragt, für eine hinreichende redaktionelle und formelle
+(Reihenfolge der Punkte) Ausarbeitung des Landeswahlprogramms zu sorgen. Dies soll zeitig nach
+dem Abschluss der inhaltlichen Arbeit stattfinden, sodass das Wahlprogramm spätestens im
+Frühjahr 2013 beschlossen werden kann.\par
+Falls ein Landesgrundsatzprogramm beschlossen wird, können analog Programmanträge für dieses
+gestellt werden. Für diesen Fall wird außerdem der Landesvorstand beauftragt, dafür zu sorgen,
+dass dieses redaktionell angemessen aufbereitet wird.
+\subsection{Begründung}
+Nachdem das im September 2010 vom Landesparteitag beschlossene Konzept zur
+Programmentwicklung nur in Teilen umgesetzt wurde, braucht es eine klärende Aussage des
+Landesparteitags und einen Beschluss zum weiteren Vorgehen.\par
+Einige Piraten haben bereits aufwändig Positionspapiere umgesetzt, in der Erwartung, dass deren
+Inhalte wie zuvor beschlossen in das Wahlprogramm einfließen. Es wäre fatal, diese Arbeit zunichte
+zu machen. Gleichzeitig haben wir Anträge zum Wahlprogramm vorliegen, die wir nicht einfach
+außen vor lassen können und sollten. Also halten wir uns beide Wege offen.\par
+So sollen auf den Parteitagen im März und fortfolgend Inhalte beschlossen werden, aus diesen
+entsteht das Wahlprogramm. So haben wir ausreichend Zeit und die wesentlichen Inhalte des
+Wahlprogramms stehen fest, bevor Listen und Direktkandidaten gewählt werden.\par
+Im Antragstext steht bewusst die Formulierung, dass der Landesvorstand dafür Sorge tragen soll,
+dass die Inhalte zu einem Landeswahlprogramm aufbereitet werden. Das muss nicht heißen, dass
+die Vorstandsmitglieder selbst dies vornehmen müssen, sie tragen aber die Verantwortung dafür,
+dass es geschieht.\par
+Die Aussage zu einem eventuellen Landesgrundsatzprogramm ist, dass hierfür eigene
+Programmanträge gestellt werden sollen und dieses Programm - falls es beschlossen wird -
+ebenfalls aufbereitet werden soll, allerdings lediglich redaktionell (Rechtschreibfehler usw.).
+\end{document}
+
