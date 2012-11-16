@@ -9,6 +9,10 @@
 }
 \setcounter{secnumdepth}{-1} \setcounter{tocdepth}{1} 
 
+%\setmainfont{Linux Libertine O}
+%\setsansfont{Linux Biolinum O}
+
+
 % ---------- Benutzerdfinierte Befehle/ Umgebungen
 
 \definecolor{shadecolor}{gray}{0.95}
@@ -32,16 +36,11 @@
 
 \newcommand{\meinung}[1]{
 \begin{Form}
-\begin{tabular}{llll}
-Meinung: & & LPT: & \\
-    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1Meinung]{}{\phantom{.}=dafur} & Dafür & 
-    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1LPT]{}{\phantom{.}=angen} & Angenommen \\\\
-    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1Meinung]{}{\phantom{.}=dagegen} & Dagegen &
-    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1LPT]{}{\phantom{.}=abgel} & Abgelehnt\\\\
-    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1Meinung]{}{\phantom{.}=ent} & Enthaltung &
-    \ChoiceMenu[radio,width=1em,radiosymbol=\ding{55},name=#1LPT]{}{\phantom{.}=zuruck} & Zurückgezogen\\
-    \end{tabular}
-    \TextField[color={0 0 0},bordercolor={1 0 0},name=#1note,width=0.375\textwidth,multiline=true,height=5em]{Notizen:}
+	\begin{tabular}{l}
+    \ChoiceMenu[radio,radiosymbol=\ding{55},width=1em,default=zuruck,name=#1LPT]{LPT:}{Angenommen=ang,Abgelehnt=abg,Zurückgezogen=zuruck}\\\\
+    \ChoiceMenu[radio,radiosymbol=\ding{55},width=1em,default=ent,name=#1Meinung]{Meinung:}{Dafür=daf,Dagegen=dag,Enthaltung=ent}\\
+\end{tabular}
+\TextField[color={0 0 0},bordercolor={1 0 0},name=#1note,width=0.375\textwidth,multiline=true,height=5em]{Notizen:}
 \end{Form}
 }
 

@@ -2,7 +2,7 @@
 \usepackage[ngermanb]{babel}
 \usepackage{amsmath}
 \usepackage[mathletters]{ucs}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -19,6 +19,7 @@
 \usepackage{lmodern}
  \usepackage{framed}
   \usepackage{color}
+  \usepackage{libertine}
 \usepackage[
 	pdftex,
 	bookmarksopen=true,
@@ -31,6 +32,9 @@
 \usepackage{lastpage}
 
 % ---------- Daten des Landesparteitages
+\newcommand{\organ}{
+Piratenpartei Deutschland Landesverband Bayern
+}
 
 \newcommand{\lpt}{
 	Landesparteitag Bayern 2012.2
@@ -59,7 +63,7 @@
 
 \usepackage{newcommands}
 
-\hypersetup{pdfauthor = {Landesverband Bayern, Piratenpartei Deutschland}, pdftitle = {Antragsbuch zum \lpt}} 
+\hypersetup{pdfauthor = {\organ}, pdftitle = {Antragsbuch zum \lpt}} 
 
 \begin{document}
 
@@ -69,13 +73,13 @@
 \hypertarget{Titelseite}{} % Marke für hyperref pdfbookmark
 \pdfbookmark[1]{Titelseite}{Titelseite}
 \begin{titlepage}
+\begin{center}
 \begin{Large}
 \textsc{
-Piratenpartei Deutschland Landesverband Bayern
+\organ
 }
 \end{Large}
 \vspace*{4cm}
-\begin{center}
 \begin{Huge}
 \textbf{
 Antragsbuch
@@ -88,7 +92,7 @@ Antragsbuch
 }
 \end{huge}
 \\[1cm]
-\includegraphics{media/PIRATENsignet.png}
+\includegraphics[scale=.4]{media/LogoPrint.png}
 \\[1cm]
 \begin{Large}
 \textbf{\datum}
@@ -102,7 +106,6 @@ Antragsbuch
 \clearpage
 
 % ---------- Dedication
-
 
 \pdfbookmark[1]{Inhaltsverzeichnis}{toc}
 \tableofcontents
@@ -190,7 +193,6 @@ Mitglieder des Gebietes für das Thema stimmen.
 Der Mitgliederentscheid innerhalb der Partei entspricht dem Volksentscheid, den wir Piraten z.B. beim bedingungslosen
 Grundeinkommen fordern. Er ist eine Ergänzung zu Parteitagen d.h. die Willensbildung der Mitglieder kann auch zwischen
 Parteitagen stattfinden. Dies ist gelebte innerparteiliche Basisdemokratie als Vorbild für ganz Deutschland.
-
 \sonstigerantrag
 % Antragsnummer
 {X04}
